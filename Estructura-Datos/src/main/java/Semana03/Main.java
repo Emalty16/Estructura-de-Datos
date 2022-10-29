@@ -41,7 +41,11 @@ public class Main {
         }
         
     int temp = prueba.findByIndex(23).getValue();
-    
+    Queue<Integer> prueba2 = new Queue<Integer>();
+    prueba2.enqueue(temp);
+    for(int i =0 ; i<100;i++){
+        prueba2.enqueue(i);
+    }
     }
     
 }
