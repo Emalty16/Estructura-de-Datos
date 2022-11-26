@@ -32,7 +32,7 @@ public class Pila <T>{
         }
     }
     
-    public boolean find(int x){
+    /*public boolean find(int x){
         //crear una copia de la pila original
         node aux = this.top;
         // bandera para verficar si existe el elemento a buscar
@@ -48,5 +48,5 @@ public class Pila <T>{
             }
         }
         return exist;
-    }   
+    }   */
 }

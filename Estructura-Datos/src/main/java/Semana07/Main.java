@@ -24,6 +24,9 @@ public class Main {
         list.insertar(new Persona(4, "D"));
         list.insertar(new Persona(3, "M"));
         list.imprimir();
+        
+        
     }
+    
     
 }

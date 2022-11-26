@@ -11,6 +11,8 @@ import Semana03.node;
  * @author usuario
  */
 public class Lista {
+    
+    
     private node<Persona> head;
 
     public Lista() {
@@ -45,8 +47,7 @@ public class Lista {
         while(aux != null){
             System.out.println(aux.getValue().toString());
             aux = aux.getNext();
-            
-            
+                      
         }
     }
     
