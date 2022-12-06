@@ -52,6 +52,20 @@ public class Arbol {
     }
     
     public void retornarAltura(Node nodo, int nivel){
-        
+        if( nodo != null){
+            retornarAltura(nodo.getIzq(), nivel +1);
+            if(nivel > altura){
+                altura = nivel;
+                }
+                System.out.println("En este momento, gire a la derecha " + nodo.getId());
+                retornarAltura(nodo.getDer(), nivel + 1);          
+        }
+    }
+    
+    public int retornaAltura(){
+        altura = 0;
+        retornarAltura(raiz, 1);
+        System.out.println(altura);
+        return altura;
     }
 }
