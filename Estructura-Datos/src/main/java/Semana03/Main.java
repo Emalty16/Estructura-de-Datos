@@ -14,18 +14,45 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Pila<Integer> Pila = new Pila<Integer>();
-        Pila.push(1);
-        Pila.push(2);
-        Pila.push(4);
-        System.out.println(Pila.pop());
-        System.out.println(Pila.pop());
-        System.out.println(Pila.pop());
-        System.out.println(Pila.pop());
+        pila();
         
+        queue();
         
+    }
+    
+    public static void pila(){
+        Pila pila = new Pila();      
+        System.out.println("<<-- Ejemplo de Pila -->>\n");      
+        pila.apilar(23);
+        pila.apilar(78);
+        pila.apilar(221263);
+        pila.apilar(55);
+        pila.apilar(12);
+      
+        System.out.println("<<-- Pila -->>");
+        pila.listar();
+        System.out.println("\n<<-- Tamaño -->");
+        System.out.println(pila.getTamanio());
         
+        System.out.println("\n<<-- Retirar el elemento del tope de la pila -->>");
+        pila.pop();
+        pila.listar();
+        System.out.println("Tamaño: " + pila.getTamanio());
         
+        System.out.println("\n<<-- Consulta si existe el valor 65 -->>");
+        System.out.println(pila.find(78));
+        
+        System.out.println("\n<<-- Elimina la pila -->>");
+        pila.eliminar();
+        
+        System.out.println("\n<<-- Consulta si la pila esta vacia -->>");
+        System.out.println(pila.esVacia());
+        
+        System.out.println("\n\n<<-- Fin de ejemplo pila -->>");
+    }
+    
+    
+    public static void queue(){
         Queue<Integer> Cola = new Queue<Integer>();
         Cola.enqueue(1);
         Cola.enqueue(2);
@@ -47,5 +74,4 @@ public class Main {
         prueba2.enqueue(i);
     }
     }
-    
 }

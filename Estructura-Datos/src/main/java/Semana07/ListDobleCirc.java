@@ -4,15 +4,13 @@
  */
 package Semana07;
 
-import Semana03.node;
-
 public class ListDobleCirc {
 
-    private node<Persona> head;
-    private node<Persona> tail;
+    private Nodo head;
+    private Nodo tail;
 
     public void insertar(Persona value) {
-        node<Persona> nuevoNodo = new node<Persona>(value);
+        Nodo nuevoNodo = new Nodo();
         if (head == null) {
             head = nuevoNodo;
             tail = head;
@@ -31,7 +29,7 @@ public class ListDobleCirc {
             tail.setNext(head);
             head.setBack(tail);
         } else {
-            node<Persona> aux = head;
+            Nodo aux = head;
             while (aux.getNext().getValue().getId() < nuevoNodo.getValue().getId()) {
                 aux = aux.getNext();
             }
@@ -46,7 +44,7 @@ public class ListDobleCirc {
     }
 
     public void imprimir() {
-        node<Persona> aux = head;
+        Nodo aux = head;
         while (aux != tail) {
             System.out.println(aux.getValue().toString());
             aux = aux.getNext();
@@ -56,7 +54,7 @@ public class ListDobleCirc {
     }
 
     public boolean existe(int d) {
-        node aux = head;
+        Nodo aux = head;
         while ((aux.getNext() != head) && (!(aux.getValue().equals(d)))) {
             aux = aux.getNext();
         }
@@ -67,34 +65,35 @@ public class ListDobleCirc {
 
     }
 
-    public void elimina(int id) {
-        boolean result = true;
-        if (head == null) {
-            return;
-        } else if (id < head.getValue().getId()) {
-            return;
-        } else if (head.getValue().getId() == id) {
-            head = head.getNext();
-            head.setBack(null);
-        } else {
-            node aux = head;
-            aux = aux.getNext();
-        /*if (aux.getNext() == id) {
-            aux.getBack().setNext(aux.getNext());
-            if (aux.getNext() != null) {
-                aux.getNext().setBack(aux.getBack());
+    public void eliminaValor(Persona valor) {
+        if (head != null) {
+            Nodo aux = head;
+            Nodo ant = null;
+            while (aux != null) {
+                if (aux.getValue() == valor) {
+                    if (ant == null) {
+                        head = head.getNext();
+                        aux.setNext(null);
+                        aux = head;
+
+                    } else {
+                        ant.setNext(aux.getNext());
+                        aux.setNext(null);
+                        aux = ant.getNext();
+                    }
+                } else {
+                    ant = aux;
+                    aux = aux.getNext();
+                }
             }
         }
+
     }
 
-    return result ;*/
-}
-
-/*public void extrae(int id){
+    /*public void extrae(int id){
         Persona p = null;
         
         
         return p;
     }*/
-    }
 }

@@ -14,14 +14,14 @@ public class Queue <T> {
     public node<T> tail;
     
     public void enqueue(T value){
-        node<T> newNode = new node<T>(value);
+        node nuevo = new node();
         if(head == null){
-            head = newNode;
-            tail= newNode;
+            head = nuevo;
+            tail= nuevo;
         }
         else{
-            tail.setNext(newNode);
-            tail=newNode;
+            tail.setNext(nuevo);
+            tail=nuevo;
             
         }
     }

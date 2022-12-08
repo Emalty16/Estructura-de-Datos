@@ -3,24 +3,20 @@ package Semana03;
 
 public class node <T> {
     
-    private T value;
+    private int value;
     private node<T> next;
     private node<T> back;
 
-    public node(T value) {
-        this.value = value;
-    }
     
     public node() {
     }
 
-    public T getValue() {
-        return value;
-    }
-
-    public void setValue(T value) {
+    public node(int value, node<T> next) {
         this.value = value;
+        this.next = next;
     }
+    
+    
 
     public node<T> getNext() {
         return next;
@@ -36,6 +32,14 @@ public class node <T> {
 
     public void setBack(node<T> back) {
         this.back = back;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     

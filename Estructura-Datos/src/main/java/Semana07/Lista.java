@@ -4,7 +4,6 @@
  */
 package Semana07;
 
-import Semana03.node;
 
 /**
  *
@@ -13,13 +12,14 @@ import Semana03.node;
 public class Lista {
     
     
-    private node<Persona> head;
+    private Nodo head;
+    private int tamanio;
 
     public Lista() {
     }
     
     public void insertar(Persona value){
-        node<Persona> nuevoNodo = new node<Persona>(value);
+        Nodo nuevoNodo = new Nodo(value);
         if (head == null ){
             head = nuevoNodo;
         }
@@ -33,7 +33,7 @@ public class Lista {
             head.setNext(nuevoNodo);
         }
         else{
-            node <Persona> aux=head;
+            Nodo aux=head;
             while(aux.getNext() != null && aux.getNext().getValue().getId()< nuevoNodo.getValue().getId()){
                aux = aux.getNext();
             }
@@ -43,7 +43,7 @@ public class Lista {
     }
     
     public void imprimir (){
-        node<Persona> aux= head;
+        Nodo aux= head;
         while(aux != null){
             System.out.println(aux.getValue().toString());
             aux = aux.getNext();
@@ -52,10 +52,43 @@ public class Lista {
     }
     
     /*public void eliminar (Persona value){
-        node<Persona> nuevoNodo = new node<Persona>(value);
-        node<Persona> aux= head;
+        Nodo nuevoNodo = new Nodo();
+        Nodo aux= head;
         System.out.print("Digite el id a eliminar");
-        if(nuevoNodo.getValue().getId() =)
+        if( head.getValue().getId()> nuevoNodo.getValue().getId()){
+            if(nuevoNodo.getValue()== 0){
+                head = head.getNext();
+            }
+            else{
+                for(int i =0; i< value-1; i++){
+                    aux = aux.getNext();
+                }
+                Nodo n = aux.getNext();
+                aux.setNext(n.getNext());
+            }
+            tamanio--;
+        }
+    }*/
+    
+    public void elimina (int id) {
+        Nodo aux = new Nodo();
+         if(head == null) {
+            aux = head;
+            aux.setNext(head);               
+                aux = head;
+            
+                while(aux.getNext() != null && aux.getNext().getValue().getId() < id){
+                    aux = aux.getNext();
+                }
+
+                if (aux.getNext() != null && aux.getNext().getValue().getId() == id){
+                    aux.setNext(aux.getNext().getNext());
+                }
+            }
+        }
+    
+    public int getTamanio(){
+        return tamanio;
     }
-    */
+    
 }
